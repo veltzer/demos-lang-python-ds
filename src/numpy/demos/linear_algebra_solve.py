@@ -13,8 +13,8 @@ X = numpy.linalg.solve(A, B)
 # Verify the solution by multiplying A and x
 result = numpy.dot(A, X)
 
-print("A * X =", result)
-print("B =", B)
+print("A*X = ", result)
+print("B = ", B)
 
 if numpy.allclose(result, B):
     print("The solution is correct!")
