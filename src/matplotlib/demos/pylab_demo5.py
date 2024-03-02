@@ -15,13 +15,14 @@ y = numpy.sin(x)
 fig, ax = plt.subplots()
 
 
-plt.plot(x,y, '-o', picker=4)  
+plt.plot(x,y, '-o', picker=4)
 text=ax.text(0,-0.5, " ", va="bottom", ha="left")
 
 
 def on_pick(event):
+    """ on_pick """
     thisline = event.artist
-    xdata, ydata = thisline.get_data()
+    _xdata, _ydata = thisline.get_data()
     ind = event.ind
     text.set_text(str(ind))
 

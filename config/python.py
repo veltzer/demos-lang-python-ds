@@ -2,6 +2,7 @@ config_requires = []
 dev_requires = []
 install_requires = [
     "scikit-learn",
+    "scikit-image",
     # "sklearn",
     "pandas",
     "numpy",

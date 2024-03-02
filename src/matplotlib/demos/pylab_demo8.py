@@ -1,16 +1,18 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 15 22:37:08 2015
+#!/usr/bin/env python3
 
-@author: liran
 """
+TBD
+"""
+
 
 import numpy as np
 from matplotlib.lines import Line2D
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
+from matplotlib import animation
+
 
 class Scope:
+    """ Scope """
     def __init__(self, ax, maxt=2, dt=0.02):
         self.ax = ax
         self.dt = dt
@@ -23,6 +25,7 @@ class Scope:
         self.ax.set_xlim(0, self.maxt)
 
     def update(self, y):
+        """ update """
         lastt = self.tdata[-1]
         if lastt > self.tdata[0] + self.maxt: # reset the arrays
             self.tdata = [self.tdata[-1]]
@@ -34,7 +37,10 @@ class Scope:
         self.tdata.append(t)
         self.ydata.append(y)
         self.line.set_data(self.tdata, self.ydata)
-        return self.line,
+        return (self.line,)
+
+    def __str__(self):
+        return self.tdata
 
 
 def emitter(p=0.03):
@@ -46,12 +52,15 @@ def emitter(p=0.03):
         else:
             yield np.random.rand(1)
 
-fig, ax = plt.subplots()
-scope = Scope(ax)
 
-# pass a generator in "emitter" to produce data for the update func
-ani = animation.FuncAnimation(fig, scope.update, emitter, interval=10,
-    blit=True)
+def main():
+    """ main entry """
+    fig, ax = plt.subplots()
+    scope = Scope(ax)
+    # pass a generator in "emitter" to produce data for the update func
+    _ani = animation.FuncAnimation(fig, scope.update, emitter, interval=10, blit=True)
+    plt.show()
 
 
-plt.show()
+if __name__ == "__main__":
+    main()
