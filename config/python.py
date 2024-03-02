@@ -9,6 +9,7 @@ install_requires = [
     "matplotlib",
     "pycmdtools",
     "pylint",
+    "flake8",
 ]
 build_requires = [
     "pymakehelper",

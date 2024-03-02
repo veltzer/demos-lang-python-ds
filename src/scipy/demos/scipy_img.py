@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 img = plt.imread("python.png")
 
-#plt.imshow(img)
+# plt.imshow(img)
 
 img = ssig.medfilt(img)
 
