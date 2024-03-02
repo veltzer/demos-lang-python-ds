@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+TBD
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 

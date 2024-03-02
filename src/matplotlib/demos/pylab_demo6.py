@@ -1,4 +1,11 @@
+#!/usr/bin/env python3
+
+"""
+TBD
+"""
+
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 class PointBrowser:
@@ -16,10 +23,15 @@ class PointBrowser:
                                   color='yellow', visible=False)
 
     def onpress(self, event):
-        if self.lastind is None: return
-        if event.key not in ('n', 'p'): return
-        if event.key=='n': inc = 1
-        else:  inc = -1
+        """ onpress """
+        if self.lastind is None:
+            return
+        if event.key not in ('n', 'p'):
+            return
+        if event.key=='n':
+            inc = 1
+        else:
+            inc = -1
 
 
         self.lastind += inc
@@ -27,26 +39,23 @@ class PointBrowser:
         self.update()
 
     def onpick(self, event):
-
-       if event.artist!=line: return True
-
-       N = len(event.ind)
-       if not N: return True
-
-       # the click locations
-       x = event.mouseevent.xdata
-       y = event.mouseevent.ydata
-
-
-       distances = np.hypot(x-xs[event.ind], y-ys[event.ind])
-       indmin = distances.argmin()
-       dataind = event.ind[indmin]
-
-       self.lastind = dataind
-       self.update()
+        if event.artist!=line:
+            return True
+        n = len(event.ind)
+        if not n:
+            return True
+        # the click locations
+        x = event.mouseevent.xdata
+        y = event.mouseevent.ydata
+        distances = np.hypot(x-xs[event.ind], y-ys[event.ind])
+        indmin = distances.argmin()
+        dataind = event.ind[indmin]
+        self.lastind = dataind
+        self.update()
 
     def update(self):
-        if self.lastind is None: return
+        if self.lastind is None:
+            return
 
         dataind = self.lastind
 
@@ -62,23 +71,17 @@ class PointBrowser:
         self.text.set_text('selected: %d'%dataind)
         fig.canvas.draw()
 
-if __name__ == '__main__':
-    import matplotlib.pyplot as plt
 
+if __name__ == '__main__':
     X = np.random.rand(20, 20)
     xs = np.mean(X, axis=1)
     ys = np.std(X, axis=1)
-
     fig, (ax, ax2) = plt.subplots(2, 1)
     ax.set_title('click on point to plot time series')
     ax2.set_title('details')
     fig.tight_layout()
     line, = ax.plot(xs, ys, 'o', picker=5)  # 5 points tolerance
-
     browser = PointBrowser()
-
     fig.canvas.mpl_connect('pick_event', browser.onpick)
     fig.canvas.mpl_connect('key_press_event', browser.onpress)
-
     plt.show()
-

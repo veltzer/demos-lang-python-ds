@@ -1,20 +1,18 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jan 16 09:50:06 2015
+#!/usr/bin/env python3
 
-@author: liran
+"""
+TBD
 """
 
-#from __future__ import print_function
 import matplotlib.pyplot as plt
 
-def handle_close(evt):
+def handle_close(_evt):
+    """ close function """
     print('Closed Figure!!!')
 
 
 fig = plt.figure()
 fig.canvas.mpl_connect('close_event', handle_close)
 
-plt.text(0.35, 0.5, 'Close Me!', dict(size=30))
+plt.text(0.35, 0.5, 'Close Me!', { "size":30 })
 plt.show()
-
