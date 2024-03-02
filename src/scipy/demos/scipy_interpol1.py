@@ -1,31 +1,23 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 15 18:20:54 2015
+#!/usr/bin/env python3
 
-@author: liran
+"""
+TBD
 """
 
+from pylab import axis, legend
 from scipy.interpolate import interp1d
-from pylab import plot, axis, legend
-from numpy import *
+import numpy
 
 # sample values
-x = linspace(0,2*pi,6)
-y = sin(x)
+x = numpy.linspace(0,2*numpy.pi,6)
+y = numpy.sin(x)
 
 
 spline_fit = interp1d(x,y,kind=5)
-xx = linspace(0,2*pi, 50)
+xx = numpy.linspace(0,2*numpy.pi, 50)
 yy = spline_fit(xx)
 
 # display the results.
-plot(xx, sin(xx), 'r-', x,y,'ro',xx,yy, 'b--',linewidth=2)
+numpy.plot(xx, numpy.sin(xx), 'r-', x,y,'ro',xx,yy, 'b--',linewidth=2)
 axis('tight')
 legend(['actual sin', 'original samples', 'interpolated curve'])
-
-
-
-
-
-
-

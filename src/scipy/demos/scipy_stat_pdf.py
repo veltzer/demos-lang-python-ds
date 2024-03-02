@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+TBD
+"""
+
 import pylab as py
 import scipy as sc
 import scipy.stats as scs
