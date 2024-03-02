@@ -1,10 +1,5 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jul 31 07:58:21 2017
+#!/usr/bin/env python3
 
-@author: liran
-"""
 import scipy as sc
 import scipy.stats as scs
 import pylab as py

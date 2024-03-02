@@ -1,10 +1,4 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jul 30 21:16:36 2017
-
-@author: liran
-"""
+#!/usr/bin/env python3
 
 import scipy.optimize as sco
 import numpy as np

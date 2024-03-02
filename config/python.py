@@ -6,6 +6,8 @@ install_requires = [
     "pandas",
     "numpy",
     "matplotlib",
+    "pycmdtools",
+    "pylint",
 ]
 build_requires = [
     "pymakehelper",

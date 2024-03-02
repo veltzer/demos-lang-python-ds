@@ -1,10 +1,4 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jul 28 11:57:21 2017
-
-@author: liran
-"""
+#!/usr/bin/env python3
 
 import numpy as np
 from skimage import data

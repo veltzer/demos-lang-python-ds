@@ -18,4 +18,4 @@ print(d)
 dt = np.dtype("i4,f8,a5")
 print(dt.fields)
 a =np.array([(1,2.0,"Hello"), (2,3.0,"World")], dtype=dt)
-print a['f2']
+print(a['f2'])
