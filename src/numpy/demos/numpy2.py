@@ -1,15 +1,12 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
 
+"""
+TBD
+"""
 
+import numpy
 
-import numpy as np
-from pylab import *
-
-a = np.array([1, 4, 5, 8], float)
-b = np.array([1, 2, 3, 4], float)
-
-c=np.add(a,b)
-
+a = numpy.array([1, 4, 5, 8], float)
+b = numpy.array([1, 2, 3, 4], float)
+c = numpy.add(a,b)
 print(c)
-
-
