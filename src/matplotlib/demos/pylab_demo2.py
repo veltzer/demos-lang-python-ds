@@ -1,13 +1,10 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 15 17:54:04 2015
+#!/usr/bin/env python3
 
-@author: liran
-"""
 import numpy as np
 import matplotlib.pyplot as plt
 
 def f(t):
+    """ simple function """
     s1 = np.cos(2*np.pi*t)
     e1 = np.exp(-t)
     return np.multiply(s1,e1)

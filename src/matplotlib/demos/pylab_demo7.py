@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Plot demonstrating the integral as the area under a curve.
 
@@ -10,13 +12,15 @@ Although this is a simple example, it demonstrates some important tweaks:
     * Use of axis spines to hide the top and right spines.
     * Custom tick placement and labels.
 """
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon
 
 
-def func(x):
-    return (x - 3) * (x - 5) * (x - 7) + 85
+def func(z):
+    """ simple function """
+    return (z - 3) * (z - 5) * (z - 7) + 85
 
 
 a, b = 2, 9 # integral limits
@@ -49,5 +53,3 @@ ax.set_xticklabels(('$a$', '$b$'))
 ax.set_yticks([])
 
 plt.show()
-
-
