@@ -32,13 +32,13 @@ class PointBrowser:
             inc = 1
         else:
             inc = -1
-
-
         self.lastind += inc
         self.lastind = np.clip(self.lastind, 0, len(xs)-1)
         self.update()
+        return
 
     def onpick(self, event):
+        """ onpick """
         if event.artist!=line:
             return True
         n = len(event.ind)
@@ -52,8 +52,10 @@ class PointBrowser:
         dataind = event.ind[indmin]
         self.lastind = dataind
         self.update()
+        return False
 
     def update(self):
+        """ update """
         if self.lastind is None:
             return
 
@@ -62,14 +64,15 @@ class PointBrowser:
         ax2.cla()
         ax2.plot(X[dataind])
 
-        ax2.text(0.05, 0.9, 'mu=%1.3f\nsigma=%1.3f'%(xs[dataind], ys[dataind]),
+        ax2.text(0.05, 0.9, f"mu={xs[dataind]}\nsigma={ys[dataind]}",
                  transform=ax2.transAxes, va='top')
         ax2.set_ylim(-0.5, 1.5)
         self.selected.set_visible(True)
         self.selected.set_data(xs[dataind], ys[dataind])
 
-        self.text.set_text('selected: %d'%dataind)
+        self.text.set_text(f"selected: {dataind}")
         fig.canvas.draw()
+        return
 
 
 if __name__ == '__main__':
