@@ -1,21 +1,18 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Apr 22 08:44:11 2018
 
-@author: liran
+"""
+TBD
 """
 
-import scipy.stats as stats
-import numpy as np
 import matplotlib.pyplot as plt
+from scipy import stats
+import numpy as np
 
 s=np.r_
 
 rv1 = stats.norm()
 rv2 = stats.norm(2.0,0.8)
-samp = s[rv1.rvs(size=100), 
-	           rv2.rvs(size=100)]
+samp = s[rv1.rvs(size=100), rv2.rvs(size=100)]
 # Kernel estimate (smoothed histogram)
 apdf = stats.kde.gaussian_kde(samp)
 x = np.linspace(-3,6,200)
