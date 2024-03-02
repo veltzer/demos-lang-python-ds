@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Dec 26 10:55:23 2014
-
-@author: liran
-"""
-
 import numpy as np
 from pylab import *
 
@@ -23,7 +16,6 @@ d=[hex(val.item()) for val in b.flat]
 print(d)
 
 dt = np.dtype("i4,f8,a5")
-print dt.fields
+print(dt.fields)
 a =np.array([(1,2.0,"Hello"), (2,3.0,"World")], dtype=dt)
 print a['f2']
-
