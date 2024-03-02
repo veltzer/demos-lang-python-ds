@@ -23,7 +23,7 @@ def func(z):
     return (z - 3) * (z - 5) * (z - 7) + 85
 
 
-a, b = 2, 9 # integral limits
+a, b = 2, 9  # integral limits
 x = np.linspace(0, 10)
 y = func(x)
 

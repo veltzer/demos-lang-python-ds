@@ -10,6 +10,7 @@ install_requires = [
     "pycmdtools",
     "pylint",
     "flake8",
+    "mypy",
 ]
 build_requires = [
     "pymakehelper",

@@ -20,4 +20,4 @@ yy = spline_fit(xx)
 # display the results.
 plot(xdata, ydata, 'ro', xx, yy, 'b--', linewidth=2)
 axis('tight')
-legend([ 'original samples', 'interpolated curve'])
+legend(['original samples', 'interpolated curve'])

@@ -28,7 +28,7 @@ class PointBrowser:
             return
         if event.key not in ('n', 'p'):
             return
-        if event.key=='n':
+        if event.key == 'n':
             inc = 1
         else:
             inc = -1
@@ -39,7 +39,7 @@ class PointBrowser:
 
     def onpick(self, event):
         """ onpick """
-        if event.artist!=line:
+        if event.artist != line:
             return True
         n = len(event.ind)
         if not n:

@@ -15,8 +15,8 @@ y = numpy.sin(x)
 fig, ax = plt.subplots()
 
 
-plt.plot(x,y, '-o', picker=4)
-text=ax.text(0,-0.5, " ", va="bottom", ha="left")
+plt.plot(x, y, '-o', picker=4)
+text = ax.text(0, -0.5, " ", va="bottom", ha="left")
 
 
 def on_pick(event):
@@ -26,6 +26,6 @@ def on_pick(event):
     ind = event.ind
     text.set_text(str(ind))
 
-cid = fig.canvas.mpl_connect('pick_event', on_pick)
 
+cid = fig.canvas.mpl_connect('pick_event', on_pick)
 plt.show()
