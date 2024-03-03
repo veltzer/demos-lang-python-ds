@@ -6,8 +6,8 @@ This example shows that numpy can solve linear equation sets
 
 import numpy
 
-A = numpy.array([[1, 2], [3, 4]])
-B = numpy.array([3, 0])
+A = numpy.array([[1, 2], [3, 4]], dtype=numpy.float64)
+B = numpy.array([3, 0], dtype=numpy.float64)
 X = numpy.linalg.solve(A, B)
 
 # Verify the solution by multiplying A and x
