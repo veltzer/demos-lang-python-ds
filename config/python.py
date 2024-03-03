@@ -3,7 +3,6 @@ dev_requires = []
 install_requires = [
     "scikit-learn",
     "scikit-image",
-    # "sklearn",
     "pandas",
     "numpy",
     "matplotlib",
@@ -11,6 +10,7 @@ install_requires = [
     "pylint",
     "flake8",
     "mypy",
+    "jupyter",
 ]
 build_requires = [
     "pymakehelper",
