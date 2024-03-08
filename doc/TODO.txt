@@ -1,0 +1,2 @@
+- do tests for all examples here.
+- document the notebooks better.
