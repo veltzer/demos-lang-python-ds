@@ -1,2 +1,3 @@
 - do tests for all examples here.
 - document the notebooks better.
+- stop collecting .py files from the .ipynb_checkpoints folders
