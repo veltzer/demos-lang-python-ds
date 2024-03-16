@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
 
 """
+This desmo shows how much regular python consumes
 """
 
-import resource
 import sys
+import resource
 import random
 
+
 def create_array():
-    l = []
-    for i in range(1000000):
-        l.append(random.randint(1, 1000000))
-    return l
+    """ create an array """
+    arr = []
+    for _ in range(1000000):
+        arr.append(random.randint(1, 1000000))
+    return arr
+
 
 a = create_array()
 print(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
