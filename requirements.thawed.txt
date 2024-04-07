@@ -1,0 +1,14 @@
+# THIS IS AN AUTO-GENERATED FILE. DO NOT EDIT!
+scikit-learn
+scikit-image
+pandas
+numpy
+matplotlib
+pycmdtools
+pylint
+flake8
+mypy
+jupyter
+pymakehelper
+pydmt
+pyclassifiers
