@@ -1,12 +1,12 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 """
 TBD
 """
 
-import numpy as np
+import numpy
 
-s = np.lib.index_tricks.RClass()
+s = numpy.lib.index_tricks.RClass()
 print(s)
 print(s[0])
 print(s[1])
