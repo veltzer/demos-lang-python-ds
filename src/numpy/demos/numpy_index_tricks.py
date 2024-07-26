@@ -6,7 +6,7 @@ TBD
 
 import numpy
 
-s = numpy.lib.index_tricks.RClass()
+s = numpy.lib.index_tricks.RClass()  # type: ignore[attr-defined]
 print(s)
 print(s[0])
 print(s[1])
