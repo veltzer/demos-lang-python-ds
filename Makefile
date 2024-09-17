@@ -1,5 +1,5 @@
 ##############
-# PARAMETERS #
+# parameters #
 ##############
 # do you want to see the commands executed ?
 DO_MKDBG:=0
@@ -15,7 +15,7 @@ DO_MYPY:=1
 DO_ALLDEP:=1
 
 ########
-# CODE #
+# code #
 ########
 # silent stuff
 ifeq ($(DO_MKDBG),1)
@@ -56,7 +56,7 @@ ALL+=$(ALL_MYPY)
 endif # DO_MYPY
 
 #########
-# RULES #
+# rules #
 #########
 .PHONY: all
 all: $(ALL)
