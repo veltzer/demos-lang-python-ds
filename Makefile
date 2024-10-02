@@ -3,6 +3,8 @@
 ##############
 # do you want to see the commands executed ?
 DO_MKDBG:=0
+# do you want dependency on the Makefile itself ?
+DO_ALLDEP:=1
 # do you want to check python syntax?
 DO_SYNTAX:=1
 # do you want to lint python files?
@@ -11,8 +13,6 @@ DO_LINT:=1
 DO_FLAKE8:=1
 # do you want to lint python files using mypy?
 DO_MYPY:=1
-# do you want dependency on the Makefile itself ?
-DO_ALLDEP:=1
 
 ########
 # code #
@@ -25,11 +25,6 @@ else # DO_MKDBG
 Q:=@
 #.SILENT:
 endif # DO_MKDBG
-
-# dependency on the makefile itself
-ifeq ($(DO_ALLDEP),1)
-.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
-endif # DO_ALLDEP
 
 ALL_PACKAGES:=$(dir $(wildcard */__init__.py))
 ALL:=
@@ -126,3 +121,10 @@ $(ALL_MYPY): out/%.mypy: %.py
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error mypy $<
 	$(Q)pymakehelper touch_mkdir $@
+
+##########
+# alldep #
+##########
+ifeq ($(DO_ALLDEP),1)
+.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
+endif # DO_ALLDEP
