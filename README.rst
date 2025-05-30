@@ -2,7 +2,7 @@
 *demos-python-datascience*
 ==========================
 
-.. image:: https://img.shields.io/pypi/v/demos-python-datascience
+.. image:: https://img.shields.io/pypi/v/demos-lang-python-ds
 
 .. image:: https://img.shields.io/github/license/veltzer/demos-python-datascience
 
