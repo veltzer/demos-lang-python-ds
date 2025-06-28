@@ -1,21 +1,19 @@
-config_requires = []
-dev_requires = []
-install_requires = [
+""" python deps for this project """
+
+install_requires: list[str] = [
     "scikit-learn",
     "scikit-image",
     "pandas",
     "numpy",
     "matplotlib",
-    "pycmdtools",
-    "pylint",
-    "flake8",
-    "mypy",
     "jupyter",
 ]
-build_requires = [
+build_requires: list[str] = [
+    "pycmdtools",
     "pymakehelper",
     "pydmt",
     "pyclassifiers",
+    "mypy",
+    "pylint",
 ]
-test_requires = []
-requires = config_requires + install_requires + build_requires + test_requires
+requires = install_requires + build_requires
