@@ -12,7 +12,6 @@ build_requires: list[str] = [
     "pycmdtools",
     "pymakehelper",
     "pydmt",
-    "pyclassifiers",
     "mypy",
     "pylint",
 ]
