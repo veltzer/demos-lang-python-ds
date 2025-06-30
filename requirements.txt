@@ -97,7 +97,7 @@ ptyprocess==0.7.0
 pure_eval==0.2.3
 pycmdtools==0.0.85
 pycparser==2.22
-pydmt==0.3.24
+pydmt==0.3.26
 pyfakeuse==0.0.9
 Pygments==2.19.2
 pylint==3.3.7
