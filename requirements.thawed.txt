@@ -4,6 +4,7 @@ matplotlib
 mypy
 numpy
 pandas
+pyclassifiers
 pycmdtools
 pydmt
 pylint
