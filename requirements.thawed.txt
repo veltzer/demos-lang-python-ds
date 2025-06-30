@@ -8,5 +8,7 @@ pycmdtools
 pydmt
 pylint
 pymakehelper
+pytest
+ruff
 scikit-image
 scikit-learn

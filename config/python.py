@@ -1,5 +1,7 @@
 """ python deps for this project """
 
+import config.shared
+
 install_requires: list[str] = [
     "scikit-learn",
     "scikit-image",
@@ -8,11 +10,6 @@ install_requires: list[str] = [
     "matplotlib",
     "jupyter",
 ]
-build_requires: list[str] = [
-    "pycmdtools",
-    "pymakehelper",
-    "pydmt",
-    "mypy",
-    "pylint",
-]
-requires = install_requires + build_requires
+build_requires: list[str] = config.shared.BUILD
+test_requires: list[str] = config.shared.TEST
+requires = install_requires + build_requires + test_requires
