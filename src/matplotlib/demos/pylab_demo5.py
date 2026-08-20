@@ -4,9 +4,9 @@ Created on Sun Jan 18 00:57:43 2015
 @author: liran
 """
 
-import numpy
 import matplotlib.pyplot as plt
 
+import numpy
 
 x = numpy.arange(50)*2*numpy.pi/50
 y = numpy.sin(x)

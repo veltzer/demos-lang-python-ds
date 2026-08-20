@@ -5,8 +5,10 @@ TBD
 """
 
 from collections import namedtuple
-import numpy as np
+
 import matplotlib.pyplot as plt
+
+import numpy as np
 
 PlotData = namedtuple("PlotData",
                       ["x", "xs", "ys", "fig", "ax", "ax2", "line"])

@@ -5,8 +5,9 @@ TBD
 """
 
 import pylab as py
-import scipy as sc
+
 import numpy as np
+import scipy as sc
 
 
 def fx(x):

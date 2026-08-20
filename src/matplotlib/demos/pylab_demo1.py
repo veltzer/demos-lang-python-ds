@@ -4,8 +4,9 @@ Created on Thu Jan 15 17:19:05 2015
 @author: liran
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+
+import numpy as np
 
 N = 5
 menMeans = (20, 35, 30, 35, 27)

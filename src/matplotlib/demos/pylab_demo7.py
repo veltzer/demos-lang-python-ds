@@ -13,9 +13,10 @@ Although this is a simple example, it demonstrates some important tweaks:
     * Custom tick placement and labels.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon
+
+import numpy as np
 
 
 def func(z):

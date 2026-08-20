@@ -4,10 +4,10 @@
 TBD
 """
 
-from pylab import plot, axis, legend
+from pylab import axis, legend, plot
 from scipy.interpolate import interp1d
-import numpy as np
 
+import numpy as np
 
 xdata = np.array([-2, -1.64, -1.33, -0.7, 0, 0.45, 1.2, 1.64, 2.32, 2.9])
 ydata = np.array([0.699369, 0.700462, 0.695354, 1.03905, 1.97389,

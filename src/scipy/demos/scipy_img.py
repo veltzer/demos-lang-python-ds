@@ -4,8 +4,8 @@
 TBD
 """
 
-import scipy.signal as ssig
 import matplotlib.pyplot as plt
+import scipy.signal as ssig
 
 img = plt.imread("python.png")
 

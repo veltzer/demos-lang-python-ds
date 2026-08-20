@@ -4,9 +4,9 @@
 This desmo shows how much regular python consumes
 """
 
-import sys
-import resource
 import random
+import resource
+import sys
 
 
 def create_array():

@@ -5,8 +5,9 @@ TBD
 """
 
 import matplotlib.pyplot as plt
-from scipy import stats
+
 import numpy as np
+from scipy import stats
 
 s = np.r_
 

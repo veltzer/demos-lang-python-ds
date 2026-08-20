@@ -4,8 +4,9 @@
 This is a demo to show how much memory numpy consumes.
 """
 
-import sys
 import resource
+import sys
+
 import numpy
 
 
