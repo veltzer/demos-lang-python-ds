@@ -4,7 +4,7 @@
 TBD
 """
 
-import pylab as py
+import matplotlib.pyplot as plt
 
 import numpy as np
 import scipy as sc
@@ -24,7 +24,7 @@ def main():
     """ main entry """
     x = np.linspace(-20, 20, 100)
     y1 = fx1(x)
-    py.plot(x, y1)
+    plt.plot(x, y1)
     fopt = sc.optimize.fmin(fx, x, full_output=True, disp=False)
     print(fopt[1])
 

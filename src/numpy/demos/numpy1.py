@@ -4,7 +4,7 @@
 TBD
 """
 
-import pylab
+import matplotlib.pyplot as plt
 
 import numpy
 
@@ -19,5 +19,5 @@ b = numpy.array([1, 2, 3, 4], float)
 fadd(b)
 a = a * b
 print(a)
-pylab.plot(a, b)
-pylab.show()
+plt.plot(a, b)
+plt.show()

@@ -4,7 +4,7 @@
 TBD
 """
 
-from pylab import axis, legend, plot
+import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
 
 import numpy
@@ -19,6 +19,6 @@ xx = numpy.linspace(0, 2*numpy.pi, 50)
 yy = spline_fit(xx)
 
 # display the results.
-plot(xx, numpy.sin(xx), 'r-', x, y, 'ro', xx, yy, 'b--', linewidth=2)
-axis('tight')
-legend(['actual sin', 'original samples', 'interpolated curve'])
+plt.plot(xx, numpy.sin(xx), 'r-', x, y, 'ro', xx, yy, 'b--', linewidth=2)
+plt.axis('tight')
+plt.legend(['actual sin', 'original samples', 'interpolated curve'])

@@ -4,7 +4,7 @@
 TBD
 """
 
-from pylab import axis, legend, plot
+import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
 
 import numpy as np
@@ -18,6 +18,6 @@ xx = np.linspace(np.min(xdata), np.max(xdata), 50)
 yy = spline_fit(xx)
 
 # display the results.
-plot(xdata, ydata, 'ro', xx, yy, 'b--', linewidth=2)
-axis('tight')
-legend(['original samples', 'interpolated curve'])
+plt.plot(xdata, ydata, 'ro', xx, yy, 'b--', linewidth=2)
+plt.axis('tight')
+plt.legend(['original samples', 'interpolated curve'])

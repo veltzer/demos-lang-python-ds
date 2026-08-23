@@ -5,11 +5,11 @@ TBD
 """
 
 
+import matplotlib.animation
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
 import numpy as np
-from matplotlib import animation
 
 
 class Scope:
@@ -59,7 +59,7 @@ def main():
     fig, ax = plt.subplots()
     scope = Scope(ax)
     # pass a generator in "emitter" to produce data for the update func
-    _ = animation.FuncAnimation(fig, scope.update, emitter, interval=10,
+    _ = matplotlib.animation.FuncAnimation(fig, scope.update, emitter, interval=10,
                                 blit=True)
     plt.show()
 
