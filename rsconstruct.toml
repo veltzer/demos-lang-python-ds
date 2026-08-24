@@ -5,8 +5,6 @@
 
 [analyzer.tera]
 
-[analyzer.markdown]
-
 [analyzer.python]
 
 # ─── templating ──────────────────────────────────────────────────────────────
@@ -25,16 +23,6 @@ dep_auto = [
 ]
 src_dirs = ["tera.templates"]
 
-# ─── markdown ────────────────────────────────────────────────────────────────
-
-[processor.rumdl]
-src_dirs = ["src"]
-
-[processor.zspell]
-src_dirs = ["src"]
-
-# ─── python ──────────────────────────────────────────────────────────────────
-
 [processor.ruff]
 src_dirs = ["src", "config"]
 
@@ -49,14 +37,6 @@ batch = false
 [processor.requirements]
 src_dirs = ["src", "config"]
 
-# ─── shell ───────────────────────────────────────────────────────────────────
-
-[processor.shellcheck]
-src_dirs = ["src", "config"]
-args = ["--severity=error", "--shell=bash"]
-
-# ─── lua ─────────────────────────────────────────────────────────────────────
-
 [processor.luacheck]
 src_dirs = ["config"]
 
@@ -70,12 +50,6 @@ src_dirs = ["src"]
 
 [processor.tidy]
 src_dirs = ["src"]
-
-[processor.eslint]
-src_dirs = ["config"]
-args = ["-c", "config/eslint.config.js"]
-
-# ─── merged from rsconstruct.local.toml ─────────────────────────────────────
 
 # Runtime deps so CI installs what the demos import (pylint/mypy resolve
 # them) -- the demos-cloud-aws pattern. scikit-image provides skimage.
