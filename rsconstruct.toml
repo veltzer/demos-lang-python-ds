@@ -50,3 +50,7 @@ src_dirs = ["src"]
 
 [processor.tidy]
 src_dirs = ["src"]
+
+# lint the GitHub Actions workflow files with actionlint
+[processor.actionlint]
+src_dirs = [".github/workflows"]
