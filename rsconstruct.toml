@@ -37,9 +37,6 @@ batch = false
 [processor.mypy]
 src_dirs = ["src", "config"]
 
-[processor.requirements]
-src_dirs = ["src", "config"]
-
 [processor.luacheck]
 src_dirs = ["config"]
 
@@ -53,13 +50,3 @@ src_dirs = ["src"]
 
 [processor.tidy]
 src_dirs = ["src"]
-
-# Runtime deps so CI installs what the demos import (pylint/mypy resolve
-# them) -- the demos-cloud-aws pattern. scikit-image provides skimage.
-[dependencies]
-pip = [
-    "matplotlib",
-    "numpy",
-    "scikit-image",
-    "scipy",
-]
