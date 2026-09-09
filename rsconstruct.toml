@@ -21,10 +21,10 @@ dep_auto = [
 src_dirs = ["tera.templates"]
 
 [processor.ruff]
-src_dirs = ["src", "config"]
+src_dirs = ["src", "scripts", "config"]
 
 [processor.pylint]
-src_dirs = ["src", "config"]
+src_dirs = ["src", "scripts", "config"]
 batch = false
 
 # batch stays at the default (true): mypy 2.x keeps its incremental cache in a
@@ -32,10 +32,25 @@ batch = false
 # contend on the same .mypy_cache DB and lose with
 # "sqlite3.OperationalError: database is locked" -> INTERNAL ERROR.
 [processor.mypy]
-src_dirs = ["src", "config"]
+src_dirs = ["src", "scripts", "config"]
 
 [processor.luacheck]
 src_dirs = ["config"]
+
+# ─── notebooks ───────────────────────────────────────────────────────────────
+
+# The notebooks are committed without outputs (the outputs are large, noisy in
+# diffs, and go stale). The generator drives scripts/nb_execute.py, which runs
+# each notebook with nbconvert and writes the executed copy, outputs included,
+# under out/notebooks. That both regenerates the outputs and proves every demo
+# still runs against the locked library versions.
+[processor.generator.notebooks]
+command = "scripts/nb_execute.py"
+src_dirs = ["src"]
+src_extensions = [".ipynb"]
+output_dir = "out/notebooks"
+output_extension = "ipynb"
+batch = false
 
 # ─── toml / yaml / json ──────────────────────────────────────────────────────
 
