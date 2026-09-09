@@ -1,11 +1,11 @@
 <!-- This file is generated. Do not edit it by hand: your changes will be
      lost on the next build. Edit the template it is rendered from, or the
      values that template reads, and build again. -->
-# *demos-python-datascience* project by Mark Veltzer
+# *demos-lang-python-ds* project by Mark Veltzer
 
 description: Demos for data science in the python language
 
-project website: https://veltzer.github.io/demos-python-datascience
+project website: https://veltzer.github.io/demos-lang-python-ds
 
 author: Mark Veltzer
 
@@ -15,11 +15,11 @@ version: 0.0.1
 
 ## github
 
-![License](https://img.shields.io/github/license/veltzer/demos-python-datascience)
+![License](https://img.shields.io/github/license/veltzer/demos-lang-python-ds)
 
 ## build
 
-![build](https://github.com/veltzer/demos-python-datascience/workflows/build/badge.svg)
+![build](https://github.com/veltzer/demos-lang-python-ds/workflows/build/badge.svg)
 
 ## contact me
 
