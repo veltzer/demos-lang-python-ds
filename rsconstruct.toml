@@ -27,8 +27,6 @@ src_dirs = ["tera.templates"]
 [processor.ruff]
 src_dirs = ["src", "scripts", "config"]
 
-[processor.pylint]
-src_dirs = ["src", "scripts", "config"]
 batch = false
 
 # batch stays at the default (true): mypy 2.x keeps its incremental cache in a

@@ -16,7 +16,6 @@ dev = [
     "ipykernel",
     "mypy",
     "nbconvert",
-    "pylint",
     "pytest",
     "ruff",
 ]
