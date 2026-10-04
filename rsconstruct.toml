@@ -16,7 +16,7 @@ reject_dot_src_dirs = true
 # listed here must exist: rsconstruct rejects a missing one at config load.
 # Repos still on config/*.py keep a dep_inputs override in their local
 # overlay until converted.
-[processor.tera]
+[processor.generator.tera]
 dep_auto = [
 	"config/project.lua",
 	"config/personal.lua",
@@ -24,7 +24,7 @@ dep_auto = [
 ]
 src_dirs = ["tera.templates"]
 
-[processor.ruff]
+[processor.checker.ruff]
 src_dirs = ["src", "scripts", "config"]
 
 batch = false
@@ -33,10 +33,10 @@ batch = false
 # SQLite metastore, so running one process per file in parallel makes them
 # contend on the same .mypy_cache DB and lose with
 # "sqlite3.OperationalError: database is locked" -> INTERNAL ERROR.
-[processor.mypy]
+[processor.checker.mypy]
 src_dirs = ["src", "scripts", "config"]
 
-[processor.luacheck]
+[processor.checker.luacheck]
 src_dirs = ["config"]
 
 # ─── notebooks ───────────────────────────────────────────────────────────────
@@ -46,7 +46,7 @@ src_dirs = ["config"]
 # each notebook with nbconvert and writes the executed copy, outputs included,
 # under out/notebooks. That both regenerates the outputs and proves every demo
 # still runs against the locked library versions.
-[processor.generator.notebooks]
+[processor.generator.generic.notebooks]
 command = "scripts/nb_execute.py"
 src_dirs = ["src"]
 src_extensions = [".ipynb"]
@@ -56,17 +56,17 @@ batch = false
 
 # ─── toml / yaml / json ──────────────────────────────────────────────────────
 
-[processor.taplo]
+[processor.checker.taplo]
 src_files = [".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
 
-[processor.tidy]
+[processor.checker.tidy]
 src_dirs = ["src"]
 
 # lint the GitHub Actions workflow files with actionlint
-[processor.actionlint]
+[processor.checker.actionlint]
 src_dirs = [".github/workflows"]
 
 # ─── markdown ────────────────────────────────────────────────────────────────
 
-[processor.rumdl]
+[processor.checker.rumdl]
 src_files = ["README.md"]
