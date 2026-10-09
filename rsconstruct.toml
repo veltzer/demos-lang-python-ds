@@ -36,7 +36,7 @@ batch = false
 [processor.checker.mypy]
 src_dirs = ["src", "scripts", "config"]
 
-[processor.checker.luacheck]
+[processor.checker.iluacheck]
 src_dirs = ["config"]
 
 # ─── notebooks ───────────────────────────────────────────────────────────────
