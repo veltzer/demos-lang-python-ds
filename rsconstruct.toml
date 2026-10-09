@@ -29,11 +29,7 @@ src_dirs = ["src", "scripts", "config"]
 
 batch = false
 
-# batch stays at the default (true): mypy 2.x keeps its incremental cache in a
-# SQLite metastore, so running one process per file in parallel makes them
-# contend on the same .mypy_cache DB and lose with
-# "sqlite3.OperationalError: database is locked" -> INTERNAL ERROR.
-[processor.checker.mypy]
+[processor.checker.pyrefly]
 src_dirs = ["src", "scripts", "config"]
 
 [processor.checker.iluacheck]
