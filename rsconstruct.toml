@@ -35,6 +35,8 @@ src_dirs = ["config"]
 # still runs against the locked library versions.
 [processor.generator.generic.notebooks]
 command = "scripts/nb_execute.py"
+# the script, nbconvert and the kernel are Python, which writes bytecode
+required_tools = ["python"]
 src_dirs = ["src"]
 src_extensions = [".ipynb"]
 output_dir = "out/notebooks"
