@@ -37,6 +37,8 @@ src_dirs = ["config"]
 command = "scripts/nb_execute.py"
 # the script, nbconvert and the kernel are Python, which writes bytecode
 required_tools = ["python"]
+# the seaborn demos fetch their example datasets (sns.load_dataset) from GitHub
+sandbox_network = true
 src_dirs = ["src"]
 src_extensions = [".ipynb"]
 output_dir = "out/notebooks"
