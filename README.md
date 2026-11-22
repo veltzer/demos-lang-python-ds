@@ -5,7 +5,7 @@
 
 description: Demos for data science in the python language
 
-project website: https://veltzer.github.io/demos-lang-python-ds
+project website: <https://veltzer.github.io/demos-lang-python-ds>
 
 author: Mark Veltzer
 
