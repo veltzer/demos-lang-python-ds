@@ -11,7 +11,15 @@ cwd is, so running the source notebook directly would write into the source
 tree. Instead the notebook and the data files next to it are copied to a
 temporary directory and the copy is executed there; only the executed
 notebook is copied to the output path. Neither the source tree nor out/
-gets anything else. """
+gets anything else.
+
+The kernel talks to nbconvert over Unix sockets in that temporary directory
+(KernelManager.transport=ipc), not over TCP: rsconstruct runs several
+notebooks at once, and jupyter_client picks a TCP port by finding a free one
+and letting the kernel bind it moments later, so two kernels starting
+together could take the same port ("Address already in use", the kernel
+dying before it replies). A socket in each notebook's own directory cannot
+collide. """
 
 import os
 import shutil
@@ -39,6 +47,7 @@ def main():
             "notebook",
             "--execute",
             "--inplace",
+            "--KernelManager.transport=ipc",
             notebook,
         ], cwd=scratch)
         if ret != 0:
