@@ -110,7 +110,7 @@ class PointBrowser:
 
 def main():
     """ main entry point """
-    x = np.random.rand(20, 20)
+    x = np.random.default_rng().random((20, 20))
     xs = np.mean(x, axis=1)
     ys = np.std(x, axis=1)
     fig, (ax, ax2) = plt.subplots(2, 1)

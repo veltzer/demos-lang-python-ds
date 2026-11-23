@@ -11,6 +11,8 @@ from matplotlib.lines import Line2D
 
 import numpy as np
 
+rng = np.random.default_rng()
+
 
 class Scope:
     """ Scope """
@@ -47,11 +49,11 @@ class Scope:
 def emitter(p=0.03):
     'return a random value with probability p, else 0'
     while True:
-        v = np.random.rand(1)
+        v = rng.random(1)
         if v > p:
             yield 0.
         else:
-            yield np.random.rand(1)
+            yield rng.random(1)
 
 
 def main():

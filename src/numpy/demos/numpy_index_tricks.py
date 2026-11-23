@@ -4,9 +4,9 @@
 TBD
 """
 
-import numpy
+import numpy as np
 
-s = numpy.lib.index_tricks.RClass()  # type: ignore[attr-defined]
+s = np.r_
 print(s)
 print(s[0])
 print(s[1])

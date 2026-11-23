@@ -18,7 +18,7 @@ def update_line(num, datums, line):
 
 
 fig1 = plt.figure()
-data = np.random.rand(2, 25)
+data = np.random.default_rng().random((2, 25))
 main_line, = plt.plot([], [], 'r-')
 plt.xlim(0, 1)
 plt.ylim(0, 1)

@@ -6,10 +6,10 @@ Created on Sun Jan 18 00:57:43 2015
 
 import matplotlib.pyplot as plt
 
-import numpy
+import numpy as np
 
-x = numpy.arange(50)*2*numpy.pi/50
-y = numpy.sin(x)
+x = np.arange(50)*2*np.pi/50
+y = np.sin(x)
 
 fig, ax = plt.subplots()
 

@@ -7,12 +7,12 @@ This is a demo to show how much memory numpy consumes.
 import resource
 import sys
 
-import numpy
+import numpy as np
 
 
 def create_array():
     """ create a large array """
-    arr = numpy.random.randint(1, 1000000, 10000000)
+    arr = np.random.default_rng().integers(1, 1000000, 10000000)
     print(f"arr = {arr}")
     print(arr)
     print(arr.shape)

@@ -12,9 +12,9 @@ NumPy supports a wide range of data types, including:
     Complex types: complex64, complex128
 """
 
-import numpy
+import numpy as np
 
-arr = numpy.array([1, 2, 3, 4, 5], dtype=numpy.float64)
+arr = np.array([1, 2, 3, 4, 5], dtype=np.float64)
 
 # conversion to string in formatted strings work
 print(f"arr = {arr}")
