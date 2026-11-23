@@ -11,10 +11,7 @@ import sys
 
 def create_array():
     """ create an array """
-    arr = []
-    for _ in range(1000000):
-        arr.append(random.randint(1, 1000000))
-    return arr
+    return [random.randint(1, 1000000) for _ in range(1000000)]
 
 
 a = create_array()

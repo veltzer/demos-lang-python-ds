@@ -9,18 +9,18 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 N = 5
-menMeans = (20, 35, 30, 35, 27)
-menStd = (2, 3, 4, 1, 2)
+men_means = (20, 35, 30, 35, 27)
+men_std = (2, 3, 4, 1, 2)
 
 ind = np.arange(N)  # the x locations for the groups
 WIDTH = 0.35       # the width of the bars
 
 fig, ax = plt.subplots()
-rects1 = ax.bar(ind, menMeans, WIDTH, color='r', yerr=menStd)
+rects1 = ax.bar(ind, men_means, WIDTH, color='r', yerr=men_std)
 
-womenMeans = (25, 32, 34, 20, 25)
-womenStd = (3, 5, 2, 3, 3)
-rects2 = ax.bar(ind+WIDTH, womenMeans, WIDTH, color='y', yerr=womenStd)
+women_means = (25, 32, 34, 20, 25)
+women_std = (3, 5, 2, 3, 3)
+rects2 = ax.bar(ind+WIDTH, women_means, WIDTH, color='y', yerr=women_std)
 
 # add some text for labels, title and axes ticks
 ax.set_ylabel('Scores')

@@ -4,14 +4,22 @@
 TBD
 """
 
-from collections import namedtuple
+from typing import Any, NamedTuple
 
 import matplotlib.pyplot as plt
 
 import numpy as np
 
-PlotData = namedtuple("PlotData",
-                      ["x", "xs", "ys", "fig", "ax", "ax2", "line"])
+
+class PlotData(NamedTuple):
+    """ the data shown by the browser """
+    x: Any
+    xs: Any
+    ys: Any
+    fig: Any
+    ax: Any
+    ax2: Any
+    line: Any
 
 
 class PointBrowser:
@@ -48,10 +56,7 @@ class PointBrowser:
             return
         if event.key not in ("n", "p"):
             return
-        if event.key == "n":
-            inc = 1
-        else:
-            inc = -1
+        inc = 1 if event.key == "n" else -1
         self.lastind += inc
         self.lastind = np.clip(self.lastind, 0, len(self.pd.xs)-1)
         self.update()

@@ -18,8 +18,8 @@ class Scope:
         self.ax = ax
         self.dt = dt
         self.maxt = maxt
-        self.tdata = [0]
-        self.ydata = [0]
+        self.tdata: list[float] = [0.0]
+        self.ydata: list[float] = [0.0]
         self.line = Line2D(self.tdata, self.ydata)
         self.ax.add_line(self.line)
         self.ax.set_ylim(-.1, 1.1)
@@ -41,7 +41,7 @@ class Scope:
         return (self.line,)
 
     def __str__(self):
-        return self.tdata
+        return str(self.tdata)
 
 
 def emitter(p=0.03):
