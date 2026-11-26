@@ -40,3 +40,6 @@ ignore-missing-imports = [
     "matplotlib.*",
     "scipy.*",
 ]
+
+[tool.pyrefly.errors]
+no-any-return = "error"
