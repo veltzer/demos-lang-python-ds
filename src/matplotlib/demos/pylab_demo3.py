@@ -28,7 +28,7 @@ line_ani = animation.FuncAnimation(
     fig1, update_line,
     25, fargs=(data, main_line), interval=300
 )
-# line_ani.save('lines.mp4')
+# line_ani.save('lines.mp4')  # noqa: ERA001  teaching: kept in the comment for the reader
 
 fig2 = plt.figure()
 
@@ -40,6 +40,6 @@ im_ani = animation.ArtistAnimation(
         fig2, ims, interval=50,
         repeat_delay=3000, blit=True
 )
-# im_ani.save('im.mp4', metadata={'artist':'Guido'})
+# im_ani.save('im.mp4', metadata={'artist':'Guido'})  # noqa: ERA001  teaching: kept in the comment for the reader
 
 plt.show()

@@ -20,4 +20,4 @@ x = np.linspace(-3, 6, 200)
 plt.plot(x, apdf(x), 'r')
 
 # Histogram
-# plt.hist(x*10, bins=250, normed=True)
+# plt.hist(x*10, bins=250, normed=True)  # noqa: ERA001  teaching: kept in the comment for the reader
