@@ -28,7 +28,7 @@ import sys
 import tempfile
 
 
-def main():
+def main() -> None:
     """ main entry point """
     source, output = sys.argv[1], sys.argv[2]
     source_dir = os.path.dirname(os.path.abspath(source))

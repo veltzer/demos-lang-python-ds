@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def fadd(c):
+def fadd(c: np.ndarray):
     """ simple function """
     c += 10
 

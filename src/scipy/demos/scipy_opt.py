@@ -9,7 +9,7 @@ import scipy.optimize as scop
 import numpy as np
 
 
-def nonlin(x, a, b, c):
+def nonlin(x: np.ndarray, a: float, b: float, c: float):
     """ non linear function """
     x0, x1, x2 = x
     print(x)
@@ -18,7 +18,7 @@ def nonlin(x, a, b, c):
             np.exp(-x0 * x1)+20 * x2 + c]
 
 
-def main():
+def main() -> None:
     """ main function """
     a, b, c = -0.5, 1.06, (10 * np.pi - 3.0) / 3
     root = scop.fsolve(nonlin, [0.1, 0.1, -0.1], args=(a, b, c))

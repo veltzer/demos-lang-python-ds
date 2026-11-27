@@ -4,9 +4,14 @@ Created on Thu Jan 15 17:19:05 2015
 @author: liran
 """
 
+from typing import TYPE_CHECKING
+
 import matplotlib.pyplot as plt
 
 import numpy as np
+
+if TYPE_CHECKING:
+    from matplotlib.container import BarContainer
 
 N = 5
 men_means = (20, 35, 30, 35, 27)
@@ -31,7 +36,7 @@ ax.set_xticklabels(('G1', 'G2', 'G3', 'G4', 'G5'))
 ax.legend((rects1[0], rects2[0]), ('Men', 'Women'))
 
 
-def autolabel(rects):
+def autolabel(rects: BarContainer) -> None:
     """ attach some text labels """
     for rect in rects:
         height = rect.get_height()

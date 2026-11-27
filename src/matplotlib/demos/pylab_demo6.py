@@ -4,11 +4,14 @@
 TBD
 """
 
-from typing import Any, NamedTuple
+from typing import TYPE_CHECKING, Any, NamedTuple
 
 import matplotlib.pyplot as plt
 
 import numpy as np
+
+if TYPE_CHECKING:
+    from matplotlib.backend_bases import KeyEvent
 
 
 class PlotData(NamedTuple):
@@ -28,7 +31,7 @@ class PointBrowser:
     generated the point will be shown in the lower axes.  Use the "n"
     and "p" keys to browse through the next and previous points
     """
-    def __init__(self, pd):
+    def __init__(self, pd: PlotData) -> None:
         self.lastind = 0
 
         self.text = pd.ax.text(
@@ -50,7 +53,7 @@ class PointBrowser:
 
         self.pd = pd
 
-    def onpress(self, event):
+    def onpress(self, event: KeyEvent) -> None:
         """ onpress """
         if self.lastind is None:
             return
@@ -62,7 +65,8 @@ class PointBrowser:
         self.update()
         return
 
-    def onpick(self, event):
+    # a pick event carries what its artist adds to it (here ind, the picked points)
+    def onpick(self, event: Any) -> bool:
         """ onpick """
         if event.artist != self.pd.line:
             return True
@@ -82,7 +86,7 @@ class PointBrowser:
         self.update()
         return False
 
-    def update(self):
+    def update(self) -> None:
         """ update """
         if self.lastind is None:
             return
@@ -108,7 +112,7 @@ class PointBrowser:
         return
 
 
-def main():
+def main() -> None:
     """ main entry point """
     x = np.random.default_rng().random((20, 20))
     xs = np.mean(x, axis=1)

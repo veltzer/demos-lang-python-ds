@@ -9,7 +9,7 @@ import resource
 import sys
 
 
-def create_array():
+def create_array() -> list[int]:
     """ create an array """
     return [random.randint(1, 1000000) for _ in range(1000000)]
 

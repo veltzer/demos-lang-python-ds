@@ -5,13 +5,18 @@ TBD
 """
 
 
+from typing import TYPE_CHECKING
+
 import matplotlib.pyplot as plt
 
 import numpy as np
 from matplotlib import animation
 
+if TYPE_CHECKING:
+    from matplotlib.lines import Line2D
 
-def update_line(num, datums, line):
+
+def update_line(num: int, datums: np.ndarray, line: Line2D):
     """ update_line """
     line.set_data(datums[..., :num])
     return (line,)

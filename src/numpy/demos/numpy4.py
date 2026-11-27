@@ -7,7 +7,7 @@ TBD
 import numpy as np
 
 
-def fn1(x, num):
+def fn1(x: np.ndarray, num: int):
     """ simple function """
     return x*2 + num
 

@@ -17,9 +17,10 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon
 
 import numpy as np
+from numpy import dtype, float64, ndarray
 
 
-def func(z):
+def func(z: ndarray[tuple[int], dtype[float64]]):
     """ simple function """
     return (z - 3) * (z - 5) * (z - 7) + 85
 

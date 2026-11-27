@@ -5,18 +5,23 @@ TBD
 """
 
 
+from typing import TYPE_CHECKING
+
 import matplotlib.animation
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
 import numpy as np
 
+if TYPE_CHECKING:
+    from matplotlib.axes._axes import Axes
+
 rng = np.random.default_rng()
 
 
 class Scope:
     """ Scope """
-    def __init__(self, ax, maxt=2, dt=0.02):
+    def __init__(self, ax: Axes, maxt: float = 2, dt: float = 0.02) -> None:
         self.ax = ax
         self.dt = dt
         self.maxt = maxt
@@ -27,7 +32,7 @@ class Scope:
         self.ax.set_ylim(-.1, 1.1)
         self.ax.set_xlim(0, self.maxt)
 
-    def update(self, y):
+    def update(self, y: float) -> tuple[Line2D]:
         """ update """
         lastt = self.tdata[-1]
         if lastt > self.tdata[0] + self.maxt:  # reset the arrays
@@ -42,11 +47,11 @@ class Scope:
         self.line.set_data(self.tdata, self.ydata)
         return (self.line,)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return str(self.tdata)
 
 
-def emitter(p=0.03):
+def emitter(p: float = 0.03):
     'return a random value with probability p, else 0'
     while True:
         v = rng.random(1)
@@ -56,7 +61,7 @@ def emitter(p=0.03):
             yield rng.random(1)
 
 
-def main():
+def main() -> None:
     """ main entry """
     fig, ax = plt.subplots()
     scope = Scope(ax)

@@ -7,7 +7,7 @@ TBD
 import matplotlib.pyplot as plt
 
 
-def handle_close(_evt):
+def handle_close(_evt) -> None:
     """ close function """
     print('Closed Figure!!!')
 
